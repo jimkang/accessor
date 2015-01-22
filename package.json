@@ -1,0 +1,28 @@
+{
+  "name": "accessor",
+  "version": "1.0.0",
+  "description": "Provides accessor functions for convenience in D3 programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jimkang/accessor.git"
+  },
+  "keywords": [
+    "D3",
+    "accessor",
+    "browser"
+  ],
+  "author": "Jim Kang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimkang/accessor/issues"
+  },
+  "homepage": "https://github.com/jimkang/accessor",
+  "devDependencies": {
+    "tape": "^3.0.3"
+  },
+  "dependencies": {}
+}
