@@ -6,7 +6,7 @@ Here's a thing you have to do a lot when using [D3](http://d3js.org) [data joins
 
     // Here, you provide a function to that gets an id from a datum so that D3 
     // can correctly identify a corresponding element to update.
-    var thingElements = selectEl.data(
+    var thingElements = rootSelectAll('.leaf').data(
       things, function getId(thing) { return thing.id; }
     );
     thingElements.enter().append('option');
@@ -17,7 +17,7 @@ Here's a thing you have to do a lot when using [D3](http://d3js.org) [data joins
 
 While those accessor functions aren't hard to write, it's easier to just use something that makes them for you, like this:
 
-    var thingElements = selectEl.data(accessor());
+    var thingElements = rootSelectAll('.leaf').data(accessor());
     thingElements.enter().append('option');
     thingElements.text(accessor('label'));
     thingElements.exit().remove();
