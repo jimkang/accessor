@@ -20,6 +20,7 @@ test('Basic test', function basicTest(t) {
   t.equal(getId(objectWithId2), 'tapeleg');
   t.deepEqual(getOtherStuff(objectWithId), [1, 2, 3]);
   t.deepEqual(accessor('non-existent', [])(objectWithId), []);
+  t.deepEqual(accessor('fhqwhgads', [])(undefined), []);
 
   t.end();
 });

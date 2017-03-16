@@ -4,12 +4,17 @@ function accessor(prop, defaultValue) {
     property = prop;
   }
   return function accessProperty(d) {
-    var value = d[property];
-    if (value === undefined) {
-      return defaultValue;
+    if (typeof d === 'object') {
+      var value = d[property];
+      if (value === undefined) {
+        return defaultValue;
+      }
+      else {
+        return d[property];
+      }
     }
     else {
-      return d[property];
+      return defaultValue;
     }
   };
 }
