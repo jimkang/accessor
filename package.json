@@ -1,6 +1,6 @@
 {
   "name": "accessor",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Provides accessor functions for convenience in D3 programming",
   "main": "index.js",
   "scripts": {
