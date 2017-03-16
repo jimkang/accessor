@@ -38,7 +38,9 @@ Otherwise:
 
     <script src="node_modules/accessor/index.js">
 
-Then, you'll have the `accessor` function. It takes a single argument, `property`, and returns a function that takes an object and returns that `object.property`. If you provide no argument `property` will default to `id`.
+Then, you'll have the `accessor` function. It takes an argument, `property`, and returns a function that takes an object and returns that `object.property`. If you provide no argument `property` will default to `id`.
+
+You can specify a second argument, a default value. The accessor will return the default value if the property you're accessing is undefined on the object.
 
 Tests
 -----

@@ -1,10 +1,16 @@
-function accessor(prop) {
+function accessor(prop, defaultValue) {
   var property = 'id';
   if (prop && typeof prop === 'string') {
     property = prop;
   }
   return function accessProperty(d) {
-    return d[property];
+    var value = d[property];
+    if (value === undefined) {
+      return defaultValue;
+    }
+    else {
+      return d[property];
+    }
   };
 }
 
