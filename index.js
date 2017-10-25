@@ -1,5 +1,8 @@
 function accessor(prop, defaultValue) {
   var property = 'id';
+  if (prop === 'identity') {
+    return identity;
+  }
   if (prop && typeof prop === 'string') {
     property = prop;
   }
@@ -21,4 +24,8 @@ function accessor(prop, defaultValue) {
 
 if (typeof module === 'object' && typeof module.exports === 'object') {
   module.exports = accessor;
+}
+
+function identity(x) {
+  return x;
 }

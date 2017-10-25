@@ -21,6 +21,7 @@ test('Basic test', function basicTest(t) {
   t.deepEqual(getOtherStuff(objectWithId), [1, 2, 3]);
   t.deepEqual(accessor('non-existent', [])(objectWithId), []);
   t.deepEqual(accessor('fhqwhgads', [])(undefined), []);
+  t.deepEqual(accessor('identity')(objectWithId), objectWithId);
 
   t.end();
 });

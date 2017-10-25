@@ -42,6 +42,8 @@ Then, you'll have the `accessor` function. It takes an argument, `property`, and
 
 You can specify a second argument, a default value. The accessor will return the default value if the property you're accessing is undefined on the object.
 
+If you just want the identity function (x => x), you can use `accessor('identity')`. An inline `x => x` definition may actually be fine for your case; `accessor('identity')` just creates fewer copies of that function than that.
+
 Tests
 -----
 
