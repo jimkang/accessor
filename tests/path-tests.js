@@ -6,8 +6,8 @@ test('Path test', pathTest);
 function pathTest(t) {
   var nestedObject1 = {
     data: {
-      id: 'fhqwhgads',
-    }, 
+      id: 'fhqwhgads'
+    },
     otherstuff: [1, 2, 3]
   };
 
@@ -23,9 +23,8 @@ function pathTest(t) {
 
   t.equal(getNestedId(nestedObject1), 'fhqwhgads');
   t.equal(getPropObjectInArray(nestedObject2), 6, 'Got prop nested in array.');
-  t.deepEqual(getNestedObject(nestedObject2), { name: 'six', number: 6});
+  t.deepEqual(getNestedObject(nestedObject2), { name: 'six', number: 6 });
   t.deepEqual(accessor('data/non-existent', [])(nestedObject1), []);
 
   t.end();
 }
-

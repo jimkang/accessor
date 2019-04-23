@@ -22,11 +22,9 @@ function Accessor() {
     if (prop) {
       if (typeof prop === 'string') {
         property = prop;
-      }
-      else if (typeof prop === 'object' && typeof prop.path === 'string') {
+      } else if (typeof prop === 'object' && typeof prop.path === 'string') {
         property = prop.path.split('/');
-      }
-      else {
+      } else {
         property = '' + prop;
       }
     }
@@ -46,12 +44,10 @@ function Accessor() {
         var value = getPropFromObject(d, property);
         if (value === undefined) {
           return defaultValue;
+        } else {
+          return value;
         }
-        else {
-          return value; 
-        }
-      }
-      else {
+      } else {
         return defaultValue;
       }
     }
