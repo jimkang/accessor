@@ -1,3 +1,5 @@
+var getAtPath = require('get-at-path');
+
 function Accessor() {
   var cachedAccessors = {
     identity: identity
@@ -21,6 +23,9 @@ function Accessor() {
       if (typeof prop === 'string') {
         property = prop;
       }
+      else if (typeof prop === 'object' && typeof prop.path === 'string') {
+        property = prop.path.split('/');
+      }
       else {
         property = '' + prop;
       }
@@ -34,20 +39,30 @@ function Accessor() {
   }
 
   function createAccessor(property, defaultValue) {
-    return function accessProperty(d) {
+    return accessProperty;
+
+    function accessProperty(d) {
       if (typeof d === 'object') {
-        var value = d[property];
+        var value = getPropFromObject(d, property);
         if (value === undefined) {
           return defaultValue;
         }
         else {
-          return d[property];
+          return value; 
         }
       }
       else {
         return defaultValue;
       }
-    };
+    }
+
+    function getPropFromObject(d, prop) {
+      if (typeof prop === 'string') {
+        return d[prop];
+      } else if (Array.isArray(prop)) {
+        return getAtPath(d, prop);
+      }
+    }
   }
 }
 

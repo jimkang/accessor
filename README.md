@@ -22,6 +22,12 @@ While those accessor functions aren't hard to write, it's easier to just use som
     thingElements.text(accessor('label'));
     thingElements.exit().remove();
 
+If you want to write accessors that traverse a path in an object to get properties, do this:
+
+    thingElements.text(accessor({ path: 'data/meta/label'));
+
+That will make it look for an object named `data`, then look for an object named `meta` in that, then look for a property named `label` within that. If you need to traverse arrays you can use array indexes in the path, e.g. `data/list/3/label`.
+
 Installation
 ------------
 

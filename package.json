@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/jimkang/accessor",
   "devDependencies": {
-    "tape": "^3.0.3"
+    "tape": "^4.10.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "get-at-path": "^1.0.1"
+  }
 }
