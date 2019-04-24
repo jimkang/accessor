@@ -1,5 +1,5 @@
 var test = require('tape');
-var Accessor = require('../index');
+var accessor = require('../index');
 
 test('Basic test', function basicTest(t) {
   var objectWithId = {
@@ -12,7 +12,6 @@ test('Basic test', function basicTest(t) {
     otherstuff: [4, 5, 6]
   };
 
-  var accessor = Accessor();
   var getId = accessor();
   var getOtherStuff = accessor('otherstuff');
 

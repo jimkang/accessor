@@ -36,27 +36,18 @@ Installation
 Usage
 -----
 
-If you're using Browserify:
+    var accessor = require('accessor');
 
-    var Accessor = require('accessor');
-
-Otherwise:
-
-    <script src="node_modules/accessor/index.js">
-
-Then, you'll have the `Accessor` constructor. It will return to you an instance of accessor that takes an argument, `property`, and returns a function that takes an object and returns that `object.property`. If you provide no argument `property` will default to `id`.
+Accessor takes an argument, `property`, and returns a function that takes an object and returns that `object.property`. If you provide no argument `property` will default to `id`.
 
 e.g.
 
-        var Accessor = require('accessor');
-        var createAccessor = Accessor();
-        rootSelectAll('.leaf').data(things, createAccessor('foo'));
-
-accessor instances cache the functions they create. So if you call `createAccessor('foo')` twice, you'll always get back the same accessor function.
+    var accessor = require('accessor');
+    rootSelectAll('.leaf').data(things, accessor('foo'));
 
 You can specify a second argument, a default value. The accessor will return the default value if the property you're accessing is undefined on the object. (It will never cache accessors that have a default value, BTW.)
 
-If you just want the identity function (x => x), you can use `createAccessor('identity')`. An inline `x => x` definition may actually be fine for your case; `createAccessor('identity')` just creates fewer copies of that function than that.
+If you just want the identity function (x => x), you can use `accessor('identity')`. An inline `x => x` definition may actually be fine for your case; `accessor('identity')` just creates fewer copies of that function than that.
 
 Tests
 -----

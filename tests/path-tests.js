@@ -1,5 +1,5 @@
 var test = require('tape');
-var Accessor = require('../index');
+var accessor = require('../index');
 
 test('Path test', pathTest);
 
@@ -16,7 +16,6 @@ function pathTest(t) {
     otherstuff: [4, 5, { name: 'six', number: 6 }]
   };
 
-  var accessor = Accessor();
   var getNestedId = accessor({ path: 'data/id' });
   var getPropObjectInArray = accessor({ path: 'otherstuff/2/number' });
   var getNestedObject = accessor({ path: 'otherstuff/2' });
